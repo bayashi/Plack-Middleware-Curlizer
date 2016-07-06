@@ -1,10 +1,16 @@
 requires 'perl', '5.008005';
 requires 'strict';
 requires 'warnings';
-requires 'Carp';
+requires 'Plack::Request';
+requires 'Plack::Middleware';
+requires 'Plack::Util::Accessor';
 
 on 'test' => sub {
     requires 'Test::More', '0.88';
+    requires 'Plack::Builder';
+    requires 'HTTP::Request::Common';
+    requires 'LWP::UserAgent';
+    requires 'Plack::Test';
 };
 
 on 'configure' => sub {
@@ -20,4 +26,5 @@ on 'develop' => sub {
     recommends 'Test::NoTabs';
     recommends 'Test::Perl::Metrics::Lite';
     recommends 'Test::Vars';
+    recommends 'Test::File::Find::Rule';
 };
