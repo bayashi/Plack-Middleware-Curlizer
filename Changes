@@ -1,0 +1,4 @@
+Revision history for Perl extension Plack::Middleware::Curlizer
+
+0.01    Wed Jul 6 22:41:53 JST 2016
+        - original version
