@@ -27,7 +27,7 @@ sub call {
 sub _build_curl_cmd {
     my ($self, $req) = @_;
 
-    my @cmd = ('curl', sprintf(qq|'%s'|, $req->request_uri));
+    my @cmd = ('curl', sprintf(qq|'%s'|, $req->uri));
 
     unless ($req->method eq 'GET') {
         push @cmd, '-X', $req->method;
