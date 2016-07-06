@@ -41,6 +41,10 @@ sub _build_curl_cmd {
         push @cmd, '-H', qq|'$k: $v'|;
     }
 
+    if ($req->method eq 'POST') {
+        push @cmd, '--data', sprintf(qq|'%s'|, $req->content);
+    }
+
     return join(" ", @cmd);
 }
 
