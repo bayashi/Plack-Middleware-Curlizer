@@ -38,7 +38,7 @@ GET: {
 POST: {
     my $cli = sub {
             my $cb = shift;
-            my $res = $cb->(POST '/', [ foo => 123, bar => 'baz' ]);
+            my $res = $cb->(POST '/', [ foo => 123, bar => '`ls`' ]);
             is $res->code, 200;
             is $res->content_type, 'text/plain';
             like $res->content, qr/^curl /;

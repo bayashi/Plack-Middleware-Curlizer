@@ -2,6 +2,7 @@ package Plack::Middleware::Curlizer;
 use strict;
 use warnings;
 
+use String::ShellQuote qw/shell_quote/;
 use Plack::Request;
 use parent 'Plack::Middleware';
 use Plack::Util::Accessor qw/
@@ -27,7 +28,7 @@ sub call {
 sub _build_curl_cmd {
     my ($self, $req) = @_;
 
-    my @cmd = ('curl', sprintf(qq|'%s'|, $req->uri));
+    my @cmd = ('curl', $req->uri);
 
     unless ($req->method eq 'GET') {
         push @cmd, '-X', $req->method;
@@ -38,14 +39,14 @@ sub _build_curl_cmd {
 
     for my $h (@headers) {
         my ($k, $v) = split /:\s+/, $h;
-        push @cmd, '-H', qq|'$k: $v'|;
+        push @cmd, '-H', qq|$k: $v|;
     }
 
     if ($req->method eq 'POST') {
-        push @cmd, '--data', sprintf(qq|'%s'|, $req->content);
+        push @cmd, '--data', $req->content;
     }
 
-    return join(" ", @cmd);
+    return shell_quote @cmd;
 }
 
 1;
