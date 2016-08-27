@@ -16,7 +16,7 @@ sub prepare_app {
 
     unless ($self->callback) {
         $self->callback(sub{
-            my ($curl, $req, $env) = @_;
+            my ($curl) = @_;
             print "$curl\n";
         });
     }
