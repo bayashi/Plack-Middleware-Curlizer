@@ -11,6 +11,17 @@ use Plack::Util::Accessor qw/
 
 our $VERSION = '0.01';
 
+sub prepare_app {
+    my ($self) = @_;
+
+    unless ($self->callback) {
+        $self->callback(sub{
+            my ($curl, $req, $env) = @_;
+            print "$curl\n";
+        });
+    }
+}
+
 sub call {
     my($self, $env) = @_;
 
@@ -62,11 +73,7 @@ Plack::Middleware::Curlizer - Building Curl Command from Plack Request
 
 =head1 SYNOPSIS
 
-    enable 'Curlizer',
-        callback => sub {
-            my ($curl, $req, $env) = @_;
-            print "$curl\n";
-        };
+    enable 'Curlizer';
 
 
 =head1 DESCRIPTION
