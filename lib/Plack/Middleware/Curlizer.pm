@@ -2,7 +2,7 @@ package Plack::Middleware::Curlizer;
 use strict;
 use warnings;
 
-use String::ShellQuote qw/shell_quote/;
+use ShellQuote::Any;
 use Plack::Request;
 use parent 'Plack::Middleware';
 use Plack::Util::Accessor qw/
@@ -46,7 +46,7 @@ sub _build_curl_cmd {
         push @cmd, '--data', $req->content;
     }
 
-    return shell_quote @cmd;
+    return shell_quote \@cmd;
 }
 
 1;
