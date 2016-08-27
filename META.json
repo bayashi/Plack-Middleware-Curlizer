@@ -31,7 +31,7 @@
             "Plack::Middleware" : "0",
             "Plack::Request" : "0",
             "Plack::Util::Accessor" : "0",
-            "String::ShellQuote" : "0",
+            "ShellQuote::Any" : "0",
             "perl" : "5.008005",
             "strict" : "0",
             "warnings" : "0"
@@ -50,7 +50,7 @@
    "provides" : {
       "Plack::Middleware::Curlizer" : {
          "file" : "lib/Plack/Middleware/Curlizer.pm",
-         "version" : "0.01"
+         "version" : "0.02"
       }
    },
    "release_status" : "stable",
@@ -69,6 +69,6 @@
          "web" : "http://webchat.freenode.net/?channels=%23bayadev"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_serialization_backend" : "JSON::PP version 2.27300"
 }

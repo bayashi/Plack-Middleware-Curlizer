@@ -9,7 +9,7 @@ use Plack::Util::Accessor qw/
     callback
 /;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub prepare_app {
     my ($self) = @_;
@@ -105,7 +105,7 @@ By default, C<callback> is set below code ref.
 
 =begin html
 
-<a href="http://travis-ci.org/bayashi/Plack-Middleware-Curlizer"><img src="https://secure.travis-ci.org/bayashi/Plack-Middleware-Curlizer.png"/></a> <a href="https://coveralls.io/r/bayashi/Plack-Middleware-Curlizer"><img src="https://coveralls.io/repos/bayashi/Plack-Middleware-Curlizer/badge.png?branch=master"/></a>
+<a href="http://travis-ci.org/bayashi/Plack-Middleware-Curlizer"><img src="https://secure.travis-ci.org/bayashi/Plack-Middleware-Curlizer.png?_t=1472274568"/></a> <a href="https://coveralls.io/r/bayashi/Plack-Middleware-Curlizer"><img src="https://coveralls.io/repos/bayashi/Plack-Middleware-Curlizer/badge.png?_t=1472274568&branch=master"/></a>
 
 =end html
 
