@@ -82,14 +82,23 @@ Plack::Middleware::Curlizer gives you a command line for an HTTP request by B<Cu
 
 This module has been inspired by the "copy as cURL" feature on Web Browsers.
 
-=head2 CAVEAT
+=head1 MIDDLEWARE OPTIONS
 
-This module does NOT treat HTTP proxy environments. When your app works under a reverse proxy, you may use this module with L<Plack::Middleware::ReverseProxy>.
+=head2 callback($code)
+
+By default, C<callback> is set below code ref.
+
+    sub {
+        my ($curl, $req, $env) = @_;
+        print "$curl\n";
+    }
 
 
 =head1 METHODS
 
 =head2 call
+
+=head2 prepare_app
 
 
 =head1 REPOSITORY
