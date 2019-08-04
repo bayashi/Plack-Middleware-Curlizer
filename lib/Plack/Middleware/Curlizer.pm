@@ -121,7 +121,7 @@ Dai Okabayashi E<lt>bayashi@cpan.orgE<gt>
 
 =head1 SEE ALSO
 
-C<curl> <https://curl.haxx.se/>
+L<curl|https://curl.haxx.se>
 
 L<Plack::Middleware>
 
